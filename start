@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+# Usage:   ./start 00_HelloWorld.py
+
+# Load virtual midi port 
+sudo modprobe snd_virmidi midi_devs=1
+
+# Tell isobar to use that midi port as the default so we don't have to make
+# midi connections each time.
+export ISOBAR_DEFAULT_MIDI_OUT="VirMIDI 1-0" 
+export ISOBAR_DEFAULT_MIDI_IN="VirMIDI 1-0"
+
+# Start the script specified in the first command line parameter
+python $1
+
+
+
+
+# vim: set ft:bash
