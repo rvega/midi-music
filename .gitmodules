@@ -1,0 +1,3 @@
+[submodule "vendors/isobar"]
+	path = vendors/isobar
+	url = https://github.com/rvega/isobar.git
