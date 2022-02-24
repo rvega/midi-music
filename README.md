@@ -2,7 +2,7 @@
 
 These are some scripts to explore musical concepts / ideas.
 
-The workflow is: use Bitwig to host instruments/samples/whatever and send midi data (sync, note, control) to one of these scripts, let the script do it's thing and send midi data back to Bitwig. The midi connections are done through a virtual midi device called snd_virmidi which is included with the Linux kernel.
+The workflow is: use a DAW to send midi data (sync, note, control) to one of these scripts, let the script do it's thing and send midi data back to the DAW. The midi connections are done through a virtual midi device called snd_virmidi which is included with the Linux kernel.
 
 
 ## Running the scripts:
