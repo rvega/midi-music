@@ -18,7 +18,7 @@ This has only been tested in Arch Linux. You need the usual audio stack: alsa, j
 ```
 cd this/repo
 sudo pacman -S python-pipenv
-gist submodule update --init --recursive
+git submodule update --init --recursive
 pipenv install
 pipenv shell
 ```
