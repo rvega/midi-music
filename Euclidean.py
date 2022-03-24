@@ -1,8 +1,6 @@
-import itertools
-
 ##
 # Returns a list with an euclidean sequence.
-# 
+#
 # http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf
 #
 # This algorythm is better explained with an example:
@@ -11,9 +9,9 @@ import itertools
 # pulses = 5
 #
 # 1. Put all the ones to the left of a list:
-#   [[1][1][1][1][1][0][0][0][0][0][0][0][0]]
+#   [[1][1][1][1][1]||[0][0][0][0][0][0][0][0]]
 #
-# 2. Move the zeros (remainders) after each one to build sequences. In this step, the
+# 2. Move the 0s (remainders) after each 1 to build sequences. In this step, the
 #    remainder_index variable would have a value of 5 (It separates the
 #    semi-complete sequences from the remainders):
 #    [ [1 0] [1 0] [1 0] [1 0] [1 0] || [ 0 ] [ 0 ] [ 0 ] ]
@@ -43,14 +41,11 @@ def euclidean(steps, pulses, rotation):
         pulses = steps
 
     # Initial sequence, ones to the left, zeros to the right.
-    sequences = []
-    num_ones = pulses
+    ones = [[1]] * pulses
     num_zeros = steps - pulses
-    for i in range(0, num_ones):
-        sequences.append([1])
-    for i in range(0, num_zeros):
-        sequences.append([0])
-    remainder_index = num_ones
+    zeros = [[0]] * num_zeros
+    sequences = ones + zeros
+    remainder_index = pulses
 
     while True:
         # Finish if num remainders is 1 or 0
@@ -74,8 +69,9 @@ def euclidean(steps, pulses, rotation):
                 remainder_index = i
                 break
 
-    # Flatten the sequence and return.
+    # Flatten the sequence.
     sequence = sum(sequences, [])
+
     sequence = rotate(sequence, rotation)
     return sequence
 
@@ -86,5 +82,3 @@ def euclidean(steps, pulses, rotation):
 def rotate(lst, n):
     index = len(lst) - n
     return lst[index:] + lst[:index]
-
-
