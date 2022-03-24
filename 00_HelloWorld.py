@@ -8,7 +8,7 @@ class HelloWorld(MidiApp):
     def start(self):
         self.timeline.schedule({
             "note": iso.PSequence([62, 67, 72, 77]),
-            "amplitude": iso.PWhite(0, 128)
+            "amplitude": 65
         })
 
 

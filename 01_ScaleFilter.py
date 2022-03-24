@@ -1,5 +1,6 @@
 import isobar as iso
 from MidiApp import MidiApp
+import mido
 
 
 ## Snaps incoming notes to the C major scale
@@ -18,5 +19,7 @@ class ScaleFilter(MidiApp):
         self.notes_lookup = [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11]
 
 if __name__ == "__main__":
+    # print(mido.get_output_names())
+    # exit()
     app = ScaleFilter(use_midi_callback=True)
     app.run()

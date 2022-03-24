@@ -24,9 +24,8 @@ class MidiApp(object):
 
         self.timeline.add_output_device(self.midi_output)
 
-
     def run(self):
-        # logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s")
+        logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s")
 
         self.timeline.background()
 

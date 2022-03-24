@@ -9,11 +9,10 @@ sudo modprobe snd_virmidi midi_devs=1
 # midi connections each time.
 export ISOBAR_DEFAULT_MIDI_OUT="VirMIDI 1-0" 
 export ISOBAR_DEFAULT_MIDI_IN="VirMIDI 1-0"
+# export ISOBAR_DEFAULT_MIDI_OUT="REAPER" 
+# export ISOBAR_DEFAULT_MIDI_IN="REAPER"
 
 # Start the script specified in the first command line parameter
 python $1
-
-
-
 
 # vim: set ft:bash
