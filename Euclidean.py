@@ -43,7 +43,7 @@ def euclidean(steps, pulses, rotation):
     # Initial sequence, ones to the left, zeros to the right.
     ones = [[1]] * pulses
     num_zeros = steps - pulses
-    zeros = [[0]] * num_zeros
+    zeros = [[None]] * num_zeros
     sequences = ones + zeros
     remainder_index = pulses
 
